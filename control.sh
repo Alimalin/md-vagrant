@@ -51,12 +51,12 @@ echo "yes \n" | sshpass -p "miner" ssh-copy-id -i /root/.ssh/id_rsa.pub -o Stric
 cd /root
 
 # Check if /root/projectmd-vagrant directory exists; clone the repository if not.
-if [ ! -d "/root/beyond-md-vagrant" ]; then
-    git clone https://github.com/Alimalin/beyond-md-vagrant.git
+if [ ! -d "/root/md-vagrant" ]; then
+    git clone https://github.com/Alimalin/md-vagrant.git
 else
     echo "Running the playbook"
 fi
 
 # Run an Ansible playbook with host key checking disabled.
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook beyond-md-vagrant/playbook.yml
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook md-vagrant/playbook.yml
 
