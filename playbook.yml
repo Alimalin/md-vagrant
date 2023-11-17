@@ -1,0 +1,51 @@
+# playbook.yml
+---
+- name: Install Docker on Debian
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update apt repositories
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg
+        - lsb-release
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
+
+    - name: Add Docker APT repository
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable"
+        state: present
+
+    - name: Update apt repositories
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
+
+    - name: Add user to the docker group
+      user:
+        name: vagrant
+        groups: docker
+        append: yes
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
