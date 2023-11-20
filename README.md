@@ -9,7 +9,7 @@ Before running the project, ensure the following prerequisites are met:
 VirtualBox is installed (preferred provider).
 Vagrant is installed.
 Setup Instructions
-
+# Clone project files
 Clone the repository into your environment where Vagrant and VirtualBox are already installed.
 
 git clone https://github.com/Alimalin/md-vagrant.git
