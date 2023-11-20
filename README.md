@@ -1,14 +1,17 @@
 ## Overview
 
-This project facilitates the installation of Docker on remote hosts using Ansible. The setup consists of three virtual machines created with Vagrant, where one serves as the control node and the other two act as worker nodes. Ansible is installed on the control node and uses SSH connections to interact with the worker nodes. The Ansible playbook includes all the necessary modules for Docker installation. Prerequisites
+This project facilitates the installation of Docker on remote hosts using Ansible. The setup consists of three virtual machines created with Vagrant, where one serves as the control node and the other two act as worker nodes. Ansible is installed on the control node and uses SSH connections to interact with the worker nodes. The Ansible playbook includes all the necessary modules for Docker installation.
 
-# Before running the project, ensure the following prerequisites are met:
+# Prerequisites
+
+Before running the project, ensure the following prerequisites are met:
 
 VirtualBox is installed (preferred provider).
 Vagrant is installed.
 Setup Instructions
 
 Clone the repository into your environment where Vagrant and VirtualBox are already installed.
+
 git clone https://github.com/Alimalin/md-vagrant.git
 
 # Change directory into the cloned repository.
