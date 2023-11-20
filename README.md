@@ -9,7 +9,8 @@ Before running the project, ensure the following prerequisites are met:
 VirtualBox is installed (preferred provider).
 Vagrant is installed.
 
-## INSTRUCTIONS
+# INSTRUCTIONS
+
 # Clone project files
 Clone the repository into your environment where Vagrant and VirtualBox are already installed.
 
